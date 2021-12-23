@@ -123,8 +123,9 @@
                 <div class="card-tools">
                 <div class="mb-2">
                   <div class="float-right">
-                    <!-- <form action="" method="POST"> -->
-                      <select name="filter_hari" class="custom-select" style="width: auto;" data-sortOrder>
+                    <form action="" method="POST">
+                      <select id="filter_hari" name="filter_hari" onchange="this.form.submit();" class="custom-select" style="width: auto;">
+                        <option value="" selected> Hari </option>
                         <option value="Semua"> Semua </option>
                         <option value="Senin"> Senin </option>
                         <option value="Selasa"> Selasa </option>
@@ -132,7 +133,7 @@
                         <option value="Kamis"> Kamis </option>
                         <option value="Jumat"> Jumat </option>
                       </select>
-                    <!-- </form> -->
+                    </form>
                   </div>
                 </div>
                 </div>
@@ -151,13 +152,13 @@
                   </thead>
                   <tbody>
                     <?php
-                      // if(isset($_POST['filter_hari'])){
-                      //   $selectHari = $_POST['filter_hari'];
-                        // if ($selectHari == 'Semua') {
+                      if(isset($_POST['filter_hari'])){
+                        $selectHari = $_POST['filter_hari'];
+                        if ($selectHari == 'Semua') {
                           $sql = "SELECT * FROM jadwal";
-                        // } else {
-                        //   $sql = "SELECT * FROM jadwal WHERE hari LIKE '$selectHari'";
-                        // }
+                        } else {
+                          $sql = "SELECT * FROM jadwal WHERE hari='$selectHari'";
+                        }
                         $query = mysqli_query($koneksi, $sql);
 
                         while($jadwal = mysqli_fetch_array($query)) {
@@ -170,7 +171,7 @@
 
                             echo "</tr>";
                         }
-                      // }
+                      }
                     ?>
                   </tbody>
                 </table>
