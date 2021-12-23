@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2021 at 08:15 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: Dec 23, 2021 at 09:49 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,8 +98,8 @@ CREATE TABLE `siswa` (
   `id` int(11) NOT NULL,
   `NIS` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `tanggal lahir` date NOT NULL,
-  `tempat lahir` varchar(50) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `tempat_lahir` varchar(50) NOT NULL,
   `kelas` varchar(10) NOT NULL,
   `foto` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -110,9 +110,9 @@ CREATE TABLE `siswa` (
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id`, `NIS`, `nama`, `tanggal lahir`, `tempat lahir`, `kelas`, `foto`, `password`, `id_orangtua`) VALUES
+INSERT INTO `siswa` (`id`, `NIS`, `nama`, `tanggal_lahir`, `tempat_lahir`, `kelas`, `foto`, `password`, `id_orangtua`) VALUES
 (1, '1234567890', 'DImas', '2011-12-08', 'Samarinda', 'IPA 2', '', '8555f45b58e4806a1f68627339644129', 0),
-(2, '1234567891', 'Nizar', '2009-12-18', 'Balikpapan', 'IPS 3', '', 'c23cc5512351b450e8bda7f864311448', 0);
+(2, '1234567891', 'Nizar', '2009-12-18', 'balikpapan', 'IPS 3', '', 'c23cc5512351b450e8bda7f864311448', 0);
 
 --
 -- Indexes for dumped tables

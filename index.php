@@ -1,3 +1,4 @@
+<?php include("config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -252,7 +253,47 @@
 
     <!-- Main content -->
     <div class="content">
-      
+    <nav>
+        <a href="form-daftar.php">[+] Tambah Baru</a>
+    </nav>
+    <table border="2">
+      <thead>
+          <tr>
+              <th>NIS</th>
+              <th>Nama</th>
+              <th>tanggal lahir</th>
+              <th>tempat lahir</th>
+              <th>kelas</th>
+              <th>tindakan</th>
+             
+          </tr>
+      </thead>
+      <tbody>
+        <?php
+            $sql = "SELECT * FROM siswa";
+            $query = mysqli_query($koneksi, $sql);
+
+            while($siswa = mysqli_fetch_array($query)){
+                echo "<tr>";
+
+                echo "<td>".$siswa['NIS']."</td>";
+                echo "<td>".$siswa['nama']."</td>";
+                echo "<td>".$siswa['tanggal_lahir']."</td>";
+                echo "<td>".$siswa['tempat_lahir']."</td>";
+                echo "<td>".$siswa['kelas']."</td>";
+              
+
+                echo "<td>";
+                echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                echo "<a href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
+                echo "</td>";
+
+                echo "</tr>";
+            }
+        ?>
+
+      </tbody>
+    </table>
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
