@@ -251,47 +251,80 @@
 
     <!-- Main content -->
     <div class="content">
-    <nav>
-        <a href="form-daftar.php">[+] Tambah Baru</a>
-    </nav>
-    <table border="2">
-      <thead>
-          <tr>
-              <th>NIS</th>
-              <th>Nama</th>
-              <th>tanggal lahir</th>
-              <th>tempat lahir</th>
-              <th>kelas</th>
-              <th>tindakan</th>
-             
-          </tr>
-      </thead>
-      <tbody>
-        <?php
-            $sql = "SELECT * FROM siswa";
-            $query = mysqli_query($koneksi, $sql);
+        <nav>
+            <a href="form-daftar.php">[+] Tambah Baru</a>
+        </nav>
 
-            while($siswa = mysqli_fetch_array($query)){
-                echo "<tr>";
+        <div class="row">
+          <div class="col-11 " style = "margin-left : 70px">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Jadwal</h3>
 
-                echo "<td>".$siswa['NIS']."</td>";
-                echo "<td>".$siswa['nama']."</td>";
-                echo "<td>".$siswa['tanggal_lahir']."</td>";
-                echo "<td>".$siswa['tempat_lahir']."</td>";
-                echo "<td>".$siswa['kelas']."</td>";
-              
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
-                echo "<td>";
-                echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
-                echo "<a href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
-                echo "</td>";
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                      <table class="table table-hover text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>tanggal lahir</th>
+                                <th>tempat lahir</th>
+                                <th>kelas</th>
+                                <th>tindakan</th>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                              $sql = "SELECT * FROM siswa";
+                              $query = mysqli_query($koneksi, $sql);
 
-                echo "</tr>";
-            }
-        ?>
+                              while($siswa = mysqli_fetch_array($query)){
+                                  echo "<tr>";
 
-      </tbody>
-    </table>
+                                  echo "<td>".$siswa['NIS']."</td>";
+                                  echo "<td>".$siswa['nama']."</td>";
+                                  echo "<td>".$siswa['tanggal_lahir']."</td>";
+                                  echo "<td>".$siswa['tempat_lahir']."</td>";
+                                  echo "<td>".$siswa['kelas']."</td>";
+                                
+
+                                  echo "<td>";
+                                  echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                  echo "<a href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
+                                  echo "</td>";
+
+                                  echo "</tr>";
+                              }
+                          ?>
+
+                        </tbody>
+                  </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>    
+
+
+        <div class="card-body table-responsive p-0">
+          <
+        </div>
+    
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
