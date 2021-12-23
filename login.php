@@ -28,9 +28,6 @@
 
             //buat variabel session
             $_SESSION['id']=session_id();
-            $_SESSION['nama']=$data['nama'];
-            $_SESSION['level']=$data['level'];
-            $_SESSION['email']=$data['email'];
 
             //redirect ke Home.php
             header("location:index.php");

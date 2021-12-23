@@ -1,4 +1,12 @@
-<?php include("config.php"); ?>
+<?php include("config.php"); 
+
+    //aktifkan session
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header("location:formLogin.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
