@@ -183,17 +183,7 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
+      
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -208,6 +198,14 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <li class="nav-item">
+            <a href="jadwal.html" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Daftar Jadwal Kelas
+              </p>
+            </a>
+            </li>
             <ul class="nav nav-treeview">
               
             </ul>
@@ -229,7 +227,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v3</li>
             </ol>
           </div><!-- /.col -->
