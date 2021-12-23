@@ -208,7 +208,7 @@
               </p>
             </a>
             <li class="nav-item">
-            <a href="jadwal.html" class="nav-link">
+            <a href="jadwal.php" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Daftar Jadwal Kelas
