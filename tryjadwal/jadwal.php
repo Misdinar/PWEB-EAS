@@ -1,3 +1,5 @@
+<?php include("config.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +66,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -72,7 +74,7 @@
               </p>
             </a>
             <li class="nav-item">
-            <a href="jadwal.html" class="nav-link">
+            <a href="jadwal.php" class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Daftar Jadwal Kelas
@@ -113,64 +115,53 @@
       <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-          <div class="col-8">
+          <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Jadwal</h3>
 
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
+                <div class="mb-2">
+                  <div class="float-right">
+                    <select class="custom-select" style="width: auto;" data-sortOrder>
+                      <option value="Senin"> Senin </option>
+                      <option value="Selasa"> Selasa </option>
+                      <option value="Rabu"> Rabu </option>
+                      <option value="Kamis"> Kamis </option>
+                      <option value="Jumat"> Jumat </option>
+                    </select>
                   </div>
+                </div>
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
+                
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Mata Pelajaran</th>
-                      <th>Waktu</th>
-                      <th>Guru</th>
-                      <th>Status</th>
+                      <th>Hari</th>
+                      <th>Jam</th>
+                      <th>Kode Guru</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>219</td>
-                      <td>Alexander Pierce</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-warning">Pending</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>657</td>
-                      <td>Bob Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-primary">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
-                    <tr>
-                      <td>175</td>
-                      <td>Mike Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="tag tag-danger">Denied</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>
+                    <?php
+                      $sql = "SELECT * FROM jadwal";
+                      $query = mysqli_query($koneksi, $sql);
+
+                      while($jadwal = mysqli_fetch_array($query)) {
+                          echo "<tr>";
+
+                          echo "<td>".$jadwal['mapel']."</td>";
+                          echo "<td>".$jadwal['hari']."</td>";
+                          echo "<td>".$jadwal['jam']."</td>";
+                          echo "<td>".$jadwal['kode_guru']."</td>";
+
+                          echo "</tr>";
+                      }
+                    ?>
                   </tbody>
                 </table>
               </div>
@@ -201,12 +192,19 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="../dist/js/demo.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard3.js"></script>
 </body>
 </html>
