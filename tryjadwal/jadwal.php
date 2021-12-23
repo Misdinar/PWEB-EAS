@@ -123,13 +123,16 @@
                 <div class="card-tools">
                 <div class="mb-2">
                   <div class="float-right">
-                    <select class="custom-select" style="width: auto;" data-sortOrder>
-                      <option value="Senin"> Senin </option>
-                      <option value="Selasa"> Selasa </option>
-                      <option value="Rabu"> Rabu </option>
-                      <option value="Kamis"> Kamis </option>
-                      <option value="Jumat"> Jumat </option>
-                    </select>
+                    <!-- <form action="" method="POST"> -->
+                      <select name="filter_hari" class="custom-select" style="width: auto;" data-sortOrder>
+                        <option value="Semua"> Semua </option>
+                        <option value="Senin"> Senin </option>
+                        <option value="Selasa"> Selasa </option>
+                        <option value="Rabu"> Rabu </option>
+                        <option value="Kamis"> Kamis </option>
+                        <option value="Jumat"> Jumat </option>
+                      </select>
+                    <!-- </form> -->
                   </div>
                 </div>
                 </div>
@@ -148,19 +151,26 @@
                   </thead>
                   <tbody>
                     <?php
-                      $sql = "SELECT * FROM jadwal";
-                      $query = mysqli_query($koneksi, $sql);
+                      // if(isset($_POST['filter_hari'])){
+                      //   $selectHari = $_POST['filter_hari'];
+                        // if ($selectHari == 'Semua') {
+                          $sql = "SELECT * FROM jadwal";
+                        // } else {
+                        //   $sql = "SELECT * FROM jadwal WHERE hari LIKE '$selectHari'";
+                        // }
+                        $query = mysqli_query($koneksi, $sql);
 
-                      while($jadwal = mysqli_fetch_array($query)) {
-                          echo "<tr>";
+                        while($jadwal = mysqli_fetch_array($query)) {
+                            echo "<tr>";
 
-                          echo "<td>".$jadwal['mapel']."</td>";
-                          echo "<td>".$jadwal['hari']."</td>";
-                          echo "<td>".$jadwal['jam']."</td>";
-                          echo "<td>".$jadwal['kode_guru']."</td>";
+                            echo "<td>".$jadwal['mapel']."</td>";
+                            echo "<td>".$jadwal['hari']."</td>";
+                            echo "<td>".$jadwal['jam']."</td>";
+                            echo "<td>".$jadwal['kode_guru']."</td>";
 
-                          echo "</tr>";
-                      }
+                            echo "</tr>";
+                        }
+                      // }
                     ?>
                   </tbody>
                 </table>
