@@ -1,4 +1,32 @@
-<?php include("config.php"); ?>
+<?php 
+    include("config.php");
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header("location:formLogin.php");
+    }
+    
+
+    // kalau tidak ada id di query string
+    if( !isset($_GET['id']) ){
+        header('Location: index.php');
+    }
+
+    $id = $_GET['id'];
+
+    
+    $sql = "SELECT * FROM siswa WHERE id='$id'";
+    $query = mysqli_query($koneksi, $sql);
+    $siswa = mysqli_fetch_assoc($query);
+
+
+
+
+ ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +82,7 @@
           <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo $siswa['nama'];  ?></a>
         </div>
       </div>
 

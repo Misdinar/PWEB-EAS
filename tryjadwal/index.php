@@ -194,7 +194,7 @@
           <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"> <?php echo $siswa['nama'];  ?></a>
+          <a href="index.php" class="d-block"> <?php echo $siswa['nama'];  ?></a>
         </div>
       </div>
 
@@ -214,7 +214,7 @@
               </p>
             </a>
             <li class="nav-item">
-            <a href="jadwal.php" class="nav-link">
+            <a class='nav-link' href='jadwal.php?id=<?php echo $siswa['id'];  ?>'> 
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Daftar Jadwal Kelas
