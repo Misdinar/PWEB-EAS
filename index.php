@@ -220,7 +220,7 @@
 
                                   echo "<td>";
                                   echo "<a class='btn btn-info' href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
-                                  echo "<a class='btn btn-danger' href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
+                                  echo "<a class='btn btn-danger' href='hapus.php?id=".$siswa['id']."'>Hapus</a>";
                                   echo "</td>";
 
                                   echo "</tr>";

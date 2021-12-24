@@ -50,7 +50,12 @@
                         </form>
                         <div class="row px-3 mb-4">
                                 <a href="https://wa.me/6285247944248?text=Saya%20ingin%20membuat%20akun%20E-Sekolah" class="ml-auto mb-0 text-sm">Belum punya akun? Hubungi admin!</a>
-                              </div>
+                                
+                        </div>
+                        <div class="row px-3 mb-4">
+                                <a href="https://pwebeas.000webhostapp.com/tryjadwal/formLogin.php" class="ml-auto mb-0 text-sm">Login sebagai Siswa!</a>
+                                
+                        </div>
                     </div>
                 </div>
             </div>

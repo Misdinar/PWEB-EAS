@@ -9,7 +9,7 @@ if( isset($_GET['id']) ){
 
     // buat query hapus
     $sql = "DELETE FROM siswa WHERE id=$id";
-    $query = mysqli_query($koneksi, $sql);
+    $query = mysqli_query($koneksi, $sql) or die("SQL ERROR, $sql");
 
     // apakah query hapus berhasil?
     if( $query ){
@@ -23,3 +23,9 @@ if( isset($_GET['id']) ){
 }
 
 ?>
+
+
+
+
+
+
