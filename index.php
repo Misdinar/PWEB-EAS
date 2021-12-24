@@ -12,7 +12,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard 3</title>
+  <title>Admin E-Sekolah</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -42,7 +42,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -86,11 +86,11 @@
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Brad Diesel
+                  Joko Susilo
                   <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                <p class="text-sm">Segera telepon kembali</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>4 jam yang lalu</p>
               </div>
             </div>
             <!-- Message End -->
@@ -102,11 +102,11 @@
               <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  John Pierce
+                  Jonatan Silalahi
                   <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                <p class="text-sm">Sudah saya kirim ke email anda</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 2 Jam yang lalu</p>
               </div>
             </div>
             <!-- Message End -->
@@ -118,44 +118,34 @@
               <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                  Nora Silvester
+                  Lucifer Hariadi
                   <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                 </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                <p class="text-sm">Jangan lupa meeting</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>3 Jam yang lalu</p>
               </div>
             </div>
             <!-- Message End -->
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+          <a href="#" class="dropdown-item dropdown-footer">Lihat Semua pesan</a>
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <span class="badge badge-warning navbar-badge">4</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <span class="dropdown-item dropdown-header">4 Notifikasi</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
+            <i class="fas fa-envelope mr-2"></i> 4 Pesan baru
+            <span class="float-right text-muted text-sm">3 menit</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          <a href="#" class="dropdown-item dropdown-footer">Lihat Semua Pesan</a>
         </div>
       </li>
       <li class="nav-item">
@@ -175,9 +165,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="index.php" class="brand-link">
+      <img src="img/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Yayasan Vidatra</span>
     </a>
 
     <!-- Sidebar -->
@@ -185,22 +175,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="img/admin.png" class="img-circle elevation-2" alt="Admin Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
+          <a href="index.php" class="d-block">SuperAdmin</a>
         </div>
       </div>
 
@@ -211,18 +189,45 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
-                Dashboard
+                Manajemen
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Admin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Guru</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Siswa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Orang Tua</p>
+                </a>
+              </li>
             </ul>
           </li>
-          
-      
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon ion-cash"></i>
+              <p>Pembayaran</p>
+            </a>
+          </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -236,12 +241,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v3</h1>
+            <h1 class="m-0">Manajemen Siswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v3</li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item active">Manajemen Siswa</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -251,26 +256,14 @@
 
     <!-- Main content -->
     <div class="content">
-        <nav>
-            <a href="form-daftar.php">[+] Tambah Baru</a>
-        </nav>
-
         <div class="row">
           <div class="col-11 " style = "margin-left : 70px">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Jadwal</h3>
+                <h3 class="card-title">Daftar Siswa</h3>
 
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
+                  <a href="form-daftar.php" class="btn btn-primary" role="button">+Tambah Baru</a>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -279,7 +272,10 @@
                         <thead>
                             <tr>
                                 <th>NIS</th>
+                                <th>Foto</th>
                                 <th>Nama</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Agama</th>      
                                 <th>tanggal lahir</th>
                                 <th>tempat lahir</th>
                                 <th>kelas</th>
@@ -296,15 +292,18 @@
                                   echo "<tr>";
 
                                   echo "<td>".$siswa['NIS']."</td>";
+                                  echo "<td><img src='".$siswa['foto']."' width='100' height='100'></td>";
                                   echo "<td>".$siswa['nama']."</td>";
+                                  echo "<td>".$siswa['Jenis_kelamin']."</td>";
+                                  echo "<td>".$siswa['Agama']."</td>";
                                   echo "<td>".$siswa['tanggal_lahir']."</td>";
                                   echo "<td>".$siswa['tempat_lahir']."</td>";
                                   echo "<td>".$siswa['kelas']."</td>";
                                 
 
                                   echo "<td>";
-                                  echo "<a href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
-                                  echo "<a href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
+                                  echo "<a class='btn btn-info' href='form-edit.php?id=".$siswa['id']."'>Edit</a> | ";
+                                  echo "<a class='btn btn-danger' href='hapus.php?id=".$siswa['NIS']."'>Hapus</a>";
                                   echo "</td>";
 
                                   echo "</tr>";
