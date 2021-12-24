@@ -7,6 +7,7 @@ if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
     $nis = $_POST['nis'];
+    $pwd = md5($_POST['nama']);
     $nama = $_POST['nama'];
     $tempat_lahir = $_POST['tempat-lahir'];
     $jk = $_POST['jenis_kelamin'];
@@ -25,8 +26,8 @@ if(isset($_POST['daftar'])){
     if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 
     // buat query Proses simpan ke Database
-    $sql = "INSERT INTO siswa (nis, nama, agama, jenis_kelamin, tempat_lahir, tanggal_lahir, kelas, foto)
-        VALUE ('$nis', '$nama', '$agama', '$jk', '$tempat_lahir', '$tanggal_lahir', '$kelas', '$path')";
+    $sql = "INSERT INTO siswa (nis, nama, agama, jenis_kelamin, tempat_lahir, tanggal_lahir, kelas, foto, password)
+        VALUE ('$nis', '$nama', '$agama', '$jk', '$tempat_lahir', '$tanggal_lahir', '$kelas', '$path', '$pwd')";
     $query = mysqli_query($koneksi, $sql);
 
     // apakah query simpan berhasil?
