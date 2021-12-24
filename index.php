@@ -228,6 +228,12 @@
               <p>Pembayaran</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link">
+              <i class="nav-icon ion-log-out"></i>
+              <p>Logout</p>
+            </a>
+          </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
