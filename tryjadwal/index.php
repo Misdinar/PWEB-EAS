@@ -4,6 +4,12 @@
     if(!isset($_SESSION['id'])){
         header("location:formLogin.php");
     }
+    // buat query untuk ambil data dari database
+    include("config.php");
+    $nis=$_SESSION["name"];
+    $sql = "SELECT * FROM siswa WHERE nis='$nis'";
+    $query = mysqli_query($koneksi, $sql);
+    $siswa = mysqli_fetch_assoc($query);
 
 ?>
 
@@ -188,7 +194,7 @@
           <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"> <?php echo $siswa['nama'];  ?></a>
         </div>
       </div>
 
