@@ -235,12 +235,6 @@
             <!-- /.card -->
           </div>
         </div>    
-
-
-        <div class="card-body table-responsive p-0">
-          <
-        </div>
-    
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
@@ -255,7 +249,10 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    
+    <strong>Copyright &copy; YPVDP 2021 All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
   </footer>
 </div>
 <!-- ./wrapper -->

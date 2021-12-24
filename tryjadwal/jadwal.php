@@ -5,7 +5,6 @@
         header("location:formLogin.php");
     }
     
-
     // kalau tidak ada id di query string
     if( !isset($_GET['id']) ){
         header('Location: index.php');
@@ -13,32 +12,24 @@
 
     $id = $_GET['id'];
 
-    
     $sql = "SELECT * FROM siswa WHERE id='$id'";
     $query = mysqli_query($koneksi, $sql);
     $siswa = mysqli_fetch_assoc($query);
-
-
-
-
  ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Simple Tables</title>
+  <title>E-Sekolah Siswa</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
@@ -69,9 +60,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="index.php" class="brand-link">
+    <img src="../img/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Yayasan Vidatra</span>
     </a>
 
     <!-- Sidebar -->
@@ -79,7 +70,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../<?php echo $siswa['foto'];  ?>" width="100" height="100" class="img-circle elevation-2" alt="User Image">
+          <img src="../<?php echo $siswa['foto'];  ?>" style="width=100%; height=50%;" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="index.php" class="d-block"><?php echo $siswa['nama'];  ?></a>
@@ -94,7 +85,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link ">
+            <a href="index.php" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -159,10 +150,10 @@
                 <div class="mb-2">
                   <div class="float-right">
                     <form action="" method="POST">
-                      <select id="filter_hari" name="filter_hari" onchange="this.form.submit();" class="custom-select" value = "Semua"style="width: auto;">
-                        <option value="" > Hari </option>
-                        <option value="Semua"> Semua </option>
-                        <option value="Senin"> Senin </option>
+                      <select id="filter_hari" name="filter_hari" onchange="this.form.submit();" class="custom-select" style="width: auto;">
+                        <option value=""selected> Hari </option>
+                        <option value="Semua" > Semua </option>
+                        <option value="Senin" > Senin </option>
                         <option value="Selasa"> Selasa </option>
                         <option value="Rabu"> Rabu </option>
                         <option value="Kamis"> Kamis </option>
@@ -224,9 +215,9 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0-rc
+      <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; YPVDP 2021 All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
