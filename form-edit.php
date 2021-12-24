@@ -1,5 +1,9 @@
 <?php
-
+//aktifkan session
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header("location:formLogin.php");
+    }
 include("config.php");
 
 // kalau tidak ada id di query string
@@ -19,20 +23,6 @@ $siswa = mysqli_fetch_assoc($query);
 if( mysqli_num_rows($query) < 1 ){
     die("data tidak ditemukan...");
 }
-
-?>
-
-
-<?php include("config.php"); ?>
-
-<?php include("config.php"); 
-
-    //aktifkan session
-    session_start();
-    if(!isset($_SESSION['id'])){
-        header("location:formLogin.php");
-    }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -283,61 +273,64 @@ if( mysqli_num_rows($query) < 1 ){
 
     <!-- Main content -->
     <div class="content">
-       <form action="proses-edit.php" method="POST" style = "margin-left: 30px; margin-right: 30px;">
+       <form action="proses-edit.php" method="POST" style = "margin-left: 30px; margin-right: 30px;" enctype="multipart/form-data">
                 <div class="card-body">
                     <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
                   <div class="form-group">
                     <label for="nama">Nama Lengkap:</label>
-                    
                     <input type="text" class="form-control" name="nama" placeholder="nama lengkap" value="<?php echo $siswa['nama'] ?>" />
                   </div>
                   <div class="form-group">
-                
+                    <label for="nis">Nomor Induk Siswa:</label>
+                    <input type="text" class="form-control" name="nis" placeholder="nomor induk siswa" value="<?php echo $siswa['NIS'] ?>"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="agama">Agama: </label>
+                    <?php $agama = $siswa['Agama']; ?>
+                    <select class="form-control" name="agama">
+                          <option <?php echo ($agama == 'Katolik') ? "selected": "" ?>>Katolik</option>
+                          <option <?php echo ($agama == 'Kristen') ? "selected": "" ?>>Kristen</option>
+                          <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
+                          <option <?php echo ($agama == 'Hindu') ? "selected": "" ?>>Hindu</option>
+                          <option <?php echo ($agama == 'Budha') ? "selected": "" ?>>Budha</option>
+                          <option <?php echo ($agama == 'Konghucu') ? "selected": "" ?>>Konghucu</option>
+                          <option <?php echo ($agama == 'Ateis') ? "selected": "" ?>>Ateis</option>
+                        </select>
+                  </div>
+                  <div class="form-group">
                     <label for="tempat-lahir">tempat lahir: </label>
                     <textarea class="form-control" name="tempat-lahir"><?php echo $siswa['tempat_lahir'] ?></textarea>
                   </div>
                   <div class="form-group">
-                
                     <label for="tanggal-lahir">tanggal lahir: </label>
-                    <input class="form-control" type="date" id="birthday" name="birthday" value= "<?php echo $siswa['tanggal_lahir'] ?>">
-
+                    <input class="form-control" type="date" id="tanggal-lahir" name="tanggal-lahir" value= "<?php echo $siswa['tanggal_lahir'] ?>">
                   </div>
-
                   <div class="form-group">
-                
-                   
-
+                    <?php $jk = $siswa['Jenis_kelamin']; ?>
+                    <label for="jenis_kelamin">Jenis Kelamin: </label>
+                    <select class="form-control"name="jenis_kelamin">
+                          <option <?php echo ($jk == 'Laki-Laki') ? "selected": "" ?>>Laki-Laki</option>
+                          <option <?php echo ($jk == 'Perempuan') ? "selected": "" ?>>Perempuan</option>
+                        </select>
+                  </div>
+                  <div class="form-group">
                     <label for="kelas">kelas: </label>
                         <textarea class="form-control" name="kelas"><?php echo $siswa['kelas'] ?></textarea>
-
                   </div>
-
-
-                  <!-- <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
+                  <div class="form-group">
+                    <label for="foto">Foto:</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
+                        <input type="file" class="custom-file-input" id="foto" name="foto" />
+                        <label class="custom-file-label" for="foto" placeholder="foto">Pilih FIle Foto</label>
                       </div>
                     </div>
                   </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
                 </div>
                 <!-- /.card-body -->
-
-             
-                 
                   <p>
                         <input type="submit" value="Simpan" name="simpan" class="btn btn-primary" />
                     </p>
-             
               </form>
       <!-- /.container-fluid -->
     </div>
@@ -372,10 +365,16 @@ if( mysqli_num_rows($query) < 1 ){
 <script src="dist/js/adminlte.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
 </body>
 </html>
