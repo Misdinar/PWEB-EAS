@@ -149,7 +149,7 @@
                 <div class="card-tools">
                 <div class="mb-2">
                   <div class="float-right ml-2">
-                    <a href="generate_pdf.php" class="btn btn-success" role="button">Download PDF</a>
+                    <a target="_blank" href="generate_pdf.php" class="btn btn-success" role="button">Download PDF</a>
                   </div>
                   <div class="float-right">
                     <form action="" method="POST">
