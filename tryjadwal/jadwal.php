@@ -159,8 +159,8 @@
                 <div class="mb-2">
                   <div class="float-right">
                     <form action="" method="POST">
-                      <select id="filter_hari" name="filter_hari" onchange="this.form.submit();" class="custom-select" style="width: auto;">
-                        <option value="" selected> Hari </option>
+                      <select id="filter_hari" name="filter_hari" onchange="this.form.submit();" class="custom-select" value = "Semua"style="width: auto;">
+                        <option value="" > Hari </option>
                         <option value="Semua"> Semua </option>
                         <option value="Senin"> Senin </option>
                         <option value="Selasa"> Selasa </option>
