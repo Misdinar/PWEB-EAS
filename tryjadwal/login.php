@@ -28,7 +28,7 @@
 
             //buat variabel session
             $_SESSION['id']=session_id();
-
+            $_SESSION['name']= $username;
             //redirect ke Home.php
             header("location:index.php");
         }else{
