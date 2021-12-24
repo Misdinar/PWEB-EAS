@@ -79,10 +79,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../<?php echo $siswa['foto'];  ?>" width="100" height="100" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php echo $siswa['nama'];  ?></a>
+          <a href="index.php" class="d-block"><?php echo $siswa['nama'];  ?></a>
         </div>
       </div>
 
@@ -102,16 +102,23 @@
               </p>
             </a>
             <li class="nav-item">
-            <a href="jadwal.php" class="nav-link active">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Daftar Jadwal Kelas
-              </p>
-            </a>
+                <a href="jadwal.php" class="nav-link active">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Daftar Jadwal Kelas
+                  </p>
+                </a>
             </li>
+            <li class="nav-item">
+            <a href="logout.php" class="nav-link">
+              <i class="nav-icon ion-log-out"></i>
+              <p>Logout</p>
+            </a>
+          </li> 
             <ul class="nav nav-treeview">
               
             </ul>
+            
           </li> 
       </nav>
       <!-- /.sidebar-menu -->
